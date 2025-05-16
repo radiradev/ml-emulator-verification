@@ -27,8 +27,8 @@ def _():
 
 @app.cell
 def _(marimo, pd):
-    verif_df_1 = pd.read_csv((marimo.notebook_location() / "public" / "verif_df1.csv"))
-    verif_df_2 = pd.read_csv((marimo.notebook_location() / "public" / "verif_df2.csv"))
+    verif_df_1 = pd.read_csv((marimo.notebook_location() / "public" / "verif_df1.csv"), compression=None)
+    verif_df_2 = pd.read_csv((marimo.notebook_location() / "public" / "verif_df2.csv"), compression=None)
     verif_df = pd.concat([verif_df_1, verif_df_2], ignore_index=True)
     return (verif_df,)
 
